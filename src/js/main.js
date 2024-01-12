@@ -1,7 +1,6 @@
-// main.js
-
 let xRangeMin = 0, xRangeMax = 6, yRangeMin = 0, yRangeMax = 1.1;
 let xFitStart = 2, xFitEnd = 3;
+let yFit, yEndFit;
 
 document.addEventListener('DOMContentLoaded', function () {
     // Set default values for input fields
@@ -15,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updateRanges() {
+    const oldFitStart = xFitStart;
+    const oldFitEnd = xFitEnd;
+
     xRangeMin = parseFloat(document.getElementById('xmin').value);
     xRangeMax = parseFloat(document.getElementById('xmax').value);
     yRangeMin = parseFloat(document.getElementById('ymin').value);
@@ -22,6 +24,12 @@ function updateRanges() {
 
     xFitStart = parseFloat(document.getElementById('x0').value);
     xFitEnd = parseFloat(document.getElementById('x1').value);
+
+    // Check if fitting range values have changed
+    if (oldFitStart !== xFitStart || oldFitEnd !== xFitEnd) {
+        // Fitting range values have changed, replot the chart
+        plotLineChart();
+    }
 
     // Automatically calculate y-values within the specified x-range for fitting
     const fittingData = calculateFittingData(xFitStart, xFitEnd);
@@ -31,13 +39,16 @@ function updateRanges() {
     yEndFit = fittingData.yEndFit;
 }
 
+
+// Example function to calculate fitting data
 function calculateFittingData(xStart, xEnd) {
     // Modify this function based on your actual data or fitting logic
-    const yFit = 0.5 * (xStart + xEnd); // Example: Linear fitting
+    const yFit = 0.5 * (xStart + xEnd);
     const yEndFit = 0.5 * (xStart + xEnd);
 
     return { yFit, yEndFit };
 }
+
 
 function plotLineChart() {
     const inputData = document.getElementById('message').value.trim();
@@ -47,8 +58,6 @@ function plotLineChart() {
 
     const labels = columns.map(column => column[0]);
     const values = columns.map(column => parseFloat(column[1]));
-
-    updateRanges();
 
     const shapes = [
         {
