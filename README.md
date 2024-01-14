@@ -1,3 +1,3 @@
 # UV-visible Spectroscopy
 
-[Go to the Website](https://suecreamm.github.io/uvv){:target="_blank"}
+<a href="https://suecreamm.github.io/uvv" target="_blank">Go to the Website</a>
