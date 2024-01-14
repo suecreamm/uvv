@@ -1,3 +1,3 @@
 # UV-visible Spectroscopy
 
-[Website](https://github.com/uvv)
+[Go to the Website](https://suecreamm.github.io/uvv){:target="_blank"}
