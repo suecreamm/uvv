@@ -1,329 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>UV-visible Spectroscopy</title>
+<!DOCTYPE HTML>
 <!--
-
-Blaster Template
-
-http://www.templatemo.com/tm-472-blaster
-
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
+<html>
+	<head>
+		<title>UV-v Spectroscopy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-	<!-- STYLESHEET CSS FILES -->
-	<link rel="stylesheet" href="src/css/bootstrap.min.css">
-	<link rel="stylesheet" href="src/css/animate.min.css">
-	<link rel="stylesheet" href="src/css/font-awesome.min.css">
-	<link rel="stylesheet" href="src/css/nivo-lightbox.css">
-	<link rel="stylesheet" href="src/css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="src/css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-<!-- navigation section -->
-<section class="navbar navbar-fixed-top custom-navbar" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand"><span class="bold">Blaster</span></a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#contact" class="smoothScroll">PLOT</a></li>
-				<li><a href="#home" class="smoothScroll">HOME</a></li>
-				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-				<li><a href="#portfolio" class="smoothScroll">PORTFOLIO</a></li>
-				<li><a href="#team" class="smoothScroll">TEAM</a></li>
-				
-			</ul>
-		</div>
-	</div>
-</section>
+				<!-- Wrapper -->
+					<div id="wrapper">
 
-<!-- contact section -->
-<section id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 text-center">
-				<h1 class="heading">PLOT</h1>
-				<h2 class="subheading">WE LOVE PRETTY MUCH TO HEAR FROM YOU</h2>
-			</div>
-		</div>
+						<!-- Panel -->
+							<section class="panel color4-alt">
+								<div class="intro color4">
+									<h2 class="major">UV-visible Spectroscopy</h2>
+									<p>Sed vel nibh libero. Mauris et lorem pharetra massa lorem turpis congue pulvinar. Vivamus sed feugiat finibus. Duis amet bibendum amet sed. Duis mauris ex, dapibus sed ligula tempus volutpat magna etiam.</p>
+								</div>
+								<div class="inner columns divided">
+									<div class="span-1-75">
+										<form method="post" action="#">
+											<div class="fields">
+												<div class="field">
+													<label for="message">Data Here</label>
+													<textarea name="message" type="text" id="message" rows="4"></textarea>
+												</div>
+											</div>
 
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<form action="#" method="post">
-					<div class="col-md-6 col-sm-6">
-						<h4>Data Here!</h4>
-						<textarea name="message" rows="7" class="form-control" id="message" placeholder="DataFormat, ShouldBe
-1, 2
-3, 4
-5, 6
-7, 8"></textarea>
+											<ul class="actions">
+												<li><input type="plot" onclick="plotLineChart()" id="plot" value="Plot" class="button primary"  /></li>
+											</ul>
+
+											<div class="fields">
+												<div class="field third">
+													<h5>X range</h5>
+													<input type="number" name="xMin" id="xmin" placeholder="xmin" value="0" step="0.5">
+													<input type="number" name="xMax" id="xmax" placeholder="xmax" value="6" step="0.5">
+												</div>
+												<div class="field third">
+													<h5>Y range</h5>
+													<input type="number" name="yMin" id="ymin" placeholder="ymin" value="0" step="0.1">
+													<input type="number" name="yMax" id="ymax" placeholder="ymax" value="1.1" step="0.1">
+												</div>
+												<div class="field third">
+													<h5>Fit</h5>
+													<input type="number" name="xFit" id="x0" placeholder="x0" value="3.5" step="0.1">
+													<input type="number" name="xEndFit" id="x1" placeholder="x1" value="4" step="0.1">
+												</div>
+												
+											</div>
+										</form>
+									</div>
+									
+									<div class="span-3-5">
+										<div id="plotlyChart"></div>
+									</div>
+								</div>
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color2-alt">
+								<div class="inner columns aligned">
+									<div class="span-1-25">
+										<ul class="contact-icons color2">
+											<li class="icon solid fa-book">User Guide<!--a href=""></a--></li>
+										</ul>
+
+										<h3 class="major">People</h3>
+
+										<ul class="contact-icons color2">
+											<li class="icon brands fa-github"><a href="https://github.com/suecreamm/uvv/">GitHub</a></li>
+										</ul>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- Copyright -->
+							<div class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
+
 					</div>
 
-					
-					<div class="col-md-3 col-sm-3">    
-						<h4>Plot Range</h4>
-						<input name="xMin" type="text" class="form-control" id="xmin" placeholder="xmin" value="0">
-						<input name="yMin" type="text" class="form-control" id="ymin" placeholder="ymin" value="0">
-						<input name="xMax" type="text" class="form-control" id="xmax" placeholder="xmax" value="1.1">
-						<input name="yMax" type="text" class="form-control" id="ymax" placeholder="ymax" value="6">
-					</div>
-	
-					<div class="col-md-3 col-sm-3">
-						<h4>Fitting Range</h4>
-						<input name="xFit" type="text" class="form-control" id="x0" placeholder="x0" value="2">
-						<input name="xEndFit" type="text" class="form-control" id="x1" placeholder="x1" value="3">
-					</div>
-					
-					<div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-6">
-						<input name="plot" type="plot" onclick="plotLineChart()" class="form-control" id="plot" value="Plot">
-					</div>
-
-					<div class="col-md-12 col-sm-12">
-						<div id="plotlyChart"></div>
-					</div>
-				</form>
 			</div>
-		</div>
-	</div>
-</section>
 
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
 
-<!-- home section -->
-<!--section id="home">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<hr>
-				<h3><span class="bold">WE ARE a DIGITAL STUDIO</h3>
-				<h1 class="heading">from California</h1>
-				<a href="#about" class="smoothScroll btn btn-default">Our Process</a>
-			</div>
-		</div>
-	</div>		
-</section-->
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
 
-<!-- about section -->
-<section id="about">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 text-center">
-				<h1 class="heading bold">ABOUT US</h1>
-				<h2 class="subheading">WE ARE TALANTED DESIGNERS &amp; DEVELOPERS</h2>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
-				<i class="fa fa-cloud"></i>
-					<h3>Planning</h3>
-					<p>Blaster is free responsive layout from <a rel="nofollow" href="http://www.templatemo.com" target="_parent">templatemo</a>. Credit goes to <a rel="nofollow" href="https://pixabay.com" target="_parent">Pixabay</a> for images. You can change icons by looking at <a rel="nofollow" href="https://fortawesome.github.io/Font-Awesome/icons/" target="_parent">FontAwesome icons</a>. Thank you for visiting our website.</p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.9s">
-				<i class="fa fa-laptop"></i>
-					<h3>Developing</h3>
-					<p>Example: <a href="#about">&lt;i class=&quot;fa fa-phone&quot;&gt;&lt;/i&gt;</a> for phone icon. <a href="#about">&lt;i class=&quot;fa fa-mobile&quot;&gt;&lt;/i&gt;</a> for mobile icon. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="1s">
-				<i class="fa fa-globe"></i>
-					<h3>Launching</h3>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia deserunt mollit anim id.</p>
-			</div>
-			<hr>
-			<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
-				<img src="images/about-img.png" class="img-responsive" alt="about img">
-			</div>
-			<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
-				<h3>Our Focus</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-				<span><i class="fa fa-mobile"></i> Mobile Apps</span>
-					<div class="progress">
-						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-					</div>
-				<span><i class="fa fa-link"></i> Web Development</span>
-					<div class="progress">
-						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-					</div>
-				<span><i class="fa fa-cloud"></i> Cloud Computing</span>
-					<div class="progress">
-						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-					</div>
-			</div>
-		</div>
-	</div>
-</section>
+		<!-- Scripts for Plot-->
+			<script src="src/js/plot.js"></script>
+			<script src="src/js/plotly.min.js"></script>
+			<script src="src/js/regression.min.js"></script>
 
-<!-- portfolio section -->
-<div id="portfolio">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1 class="heading bold">PORTFOLIO</h1>
-				<h2 class="subheading">MOBILE, WEB AND BRAND IDENTITY</h2>
-				<!-- ISO section -->
-				<div class="iso-section">
-					<ul class="filter-wrapper clearfix">
-                   		 <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
-                   		 <li><a href="#" class="opc-main-bg" data-filter=".html">Html</a></li>
-                   		 <li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
-                    	 <li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
-                    	 <li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
-               		</ul>
-               		<div class="iso-box-section wow fadeIn" data-wow-delay="0.9s">
-               			<div class="iso-box-wrapper col4-iso-box">
-
-               				 <div class="iso-box html wordpress mobile col-lg-4 col-md-4 col-sm-6 col-xs-6">
-               				 	<a href="images/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img1.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-4 col-lg-4 col-sm-6 col-xs-6">
-               				 	<a href="images/portfolio-img2.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img2.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html mobile col-lg-4 col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img3.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-lg-4 col-md-4 col-sm-6 col-xs-6">
-               				 	<a href="images/portfolio-img4.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img4.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html photoshop col-lg-4 col-md-4 col-sm-6 col-xs-6">
-               				 	<a href="images/portfolio-img5.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img5.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box photoshop col-lg-4 col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img6.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img6.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box photoshop mobile col-lg-4 col-md-4 col-sm-12 col-xs-6">
-               				 	<a href="images/portfolio-img7.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img7.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box photoshop mobile col-lg-4 col-md-4 col-sm-6 col-xs-6">
-               				 	<a href="images/portfolio-img8.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img8.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress mobile col-lg-4 col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img9.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img9.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               			</div>
-               		</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</div>		
-
-<!-- team section -->
-<section id="team">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1 class="heading bold">OUR TEAM</h1>
-				<h2 class="subheading">CREATIVE TALENTS FROM WEST COAST</h2>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="0.9s">
-				<div class="team-wrapper">
-					<img src="images/team1.jpg" class="img-responsive" alt="team img">
-						<div class="team-des">
-							<h4>Tracy</h4>
-							<h3>Designer</h3>
-						</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1.3s">
-				<div class="team-wrapper">
-					<img src="images/team2.jpg" class="img-responsive" alt="team img">
-						<div class="team-des">
-							<h4>Linda</h4>
-							<h3>Manager</h3>
-						</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-6 wow fadeIn" data-wow-delay="1.6s">
-				<div class="team-wrapper">
-					<img src="images/team3.jpg" class="img-responsive" alt="team img">
-						<div class="team-des">
-							<h4>Mary</h4>
-							<h3>Developer</h3>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- footer section -->
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<ul class="social-icon">
-					<li><a href="http://www.facebook.com/templatemo" 
-                    				class="fa fa-facebook wow bounceIn" data-wow-delay="0.3s" target="_parent"></a></li>
-					<li><a href="#" class="fa fa-twitter wow bounceIn" data-wow-delay="0.6s"></a></li>
-					<li><a href="#" class="fa fa-behance wow bounceIn" data-wow-delay="0.9s"></a></li>
-					<li><a href="#" class="fa fa-dribbble wow bounceIn" data-wow-delay="0.9s"></a></li>
-					<li><a href="#" class="fa fa-github wow bounceIn" data-wow-delay="0.9s"></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<!-- copyright section -->
-<section id="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-sm-8 col-xs-9">
-				<p>Copyright © 2084 Blaster Studio | Design: <a rel="nofollow" href="http://www.templatemo.com" target="_parent">templatemo</a></p>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-3">
-				<a href="#home" class="smoothScroll fa fa-angle-up"></a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- JAVASCRIPT JS FILES -->	
-<script src="src/js/jquery.js"></script>
-<script src="src/js/bootstrap.min.js"></script>
-<script src="src/js/smoothscroll.js"></script>
-<script src="src/js/isotope.js"></script>
-<script src="src/js/imagesloaded.min.js"></script>
-<script src="src/js/nivo-lightbox.min.js"></script>
-<script src="src/js/wow.min.js"></script>
-<script src="src/js/custom.js"></script>
-
-<script src="src/js/main.js"></script>
-<script src="src/js/plotly.min.js"></script>
-<script src="src/js/regression.min.js"></script>
-
-<script>
-	function updateAndPlot(event) {
-		event.preventDefault();  // Prevent form submission
-
-		// Update plot ranges
-		updateRanges();
-
-		// Plot the chart
-		plotLineChart();
-	}
-</script>
-
-</body>
+	</body>
 </html>
